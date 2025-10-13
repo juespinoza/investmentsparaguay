@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo completo de propiedades exclusivas en Paraguay. Apartamentos, casas, terrenos y más en las mejores ubicaciones."
+    />
+    <meta
+      name="keywords"
+      content="propiedades paraguay, venta casas asunción, apartamentos paraguay, terrenos paraguay, inversiones inmobiliarias"
+    />
+    <title>Propiedades en Paraguay | Investments Paraguay</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a365d",
+              secondary: "#c05621",
+              accent: "#f6ad55",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      .filter-card {
+        transition: all 0.3s ease;
+      }
+      .property-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .active-filter {
+        background-color: #1a365d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-2">
+          <i data-feather="home" class="text-secondary w-6 h-6"></i>
+          <span class="text-xl font-bold text-primary"
+            >InvestmentsParaguay</span
+          >
+        </a>
+
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Inicio</a
+          >
+          <a
+            href="propiedades.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Propiedades</a
+          >
+          <a
+            href="blog.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Blog</a
+          >
+          <a
+            href="contacto.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Contacto</a
+          >
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="language-switcher px-3 py-1 rounded-full bg-gray-100 text-primary text-sm font-medium hover:bg-secondary hover:text-white"
+          >
+            ES/EN
+          </button>
+          <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+            <i data-feather="menu" class="w-6 h-6 text-primary"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+          <a
+            href="index.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Inicio</a
+          >
+          <a
+            href="propiedades.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Propiedades</a
+          >
+          <a
+            href="blog.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Blog</a
+          >
+          <a
+            href="contacto.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Property Listing Header -->
+    <section class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center"
+        >
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">
+              Propiedades en Paraguay
+            </h1>
+            <p class="text-white text-opacity-80">
+              Encuentra tu propiedad ideal en las mejores zonas del país
+            </p>
+          </div>
+          <div class="mt-4 md:mt-0">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Buscar por zona, tipo..."
+                class="pl-10 pr-4 py-2 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+              <i
+                data-feather="search"
+                class="absolute left-3 top-2.5 text-white opacity-70 w-5 h-5"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-8 bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center"
+        >
+          <div class="mb-4 md:mb-0">
+            <h3 class="text-lg font-bold text-primary mb-2">Filtrar por:</h3>
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="filter-btn filter-card px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-primary hover:text-white active-filter"
+                data-filter="all"
+              >
+                Todos
+              </button>
+              <button
+                class="filter-btn filter-card px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-primary hover:text-white"
+                data-filter="apartment"
+              >
+                Apartamentos
+              </button>
+              <button
+                class="filter-btn filter-card px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-primary hover:text-white"
+                data-filter="house"
+              >
+                Casas
+              </button>
+              <button
+                class="filter-btn filter-card px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-primary hover:text-white"
+                data-filter="land"
+              >
+                Terrenos
+              </button>
+              <button
+                class="filter-btn filter-card px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-primary hover:text-white"
+                data-filter="commercial"
+              >
+                Comercial
+              </button>
+            </div>
+          </div>
+          <div>
+            <select
+              class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary"
+            >
+              <option>Ordenar por: Destacados</option>
+              <option>Precio: Menor a Mayor</option>
+              <option>Precio: Mayor a Menor</option>
+              <option>Área: Menor a Mayor</option>
+              <option>Área: Mayor a Menor</option>
+              <option>Recientes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Listing -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Property 1 -->
+          <div
+            class="property-card property-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+            data-type="apartment"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/cityscape/640x360/7"
+                alt="Penthouse en Asunción"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                NUEVO
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Penthouse en Carmelitas
+                </h3>
+                <span class="text-secondary font-bold">$450,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Exclusivo penthouse con vista panorámica a la ciudad de
+                Asunción.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 180m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 3
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 2
+                  Baños</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  ><i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                  Carmelitas, Asunción</span
+                >
+                <a href="#" class="text-secondary font-medium hover:underline"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Property 2 -->
+          <div
+            class="property-card property-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+            data-type="house"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/outdoor/640x360/8"
+                alt="Casa en San Bernardino"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold"
+              >
+                DESTACADO
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Casa en San Bernardino
+                </h3>
+                <span class="text-secondary font-bold">$320,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Hermosa casa a metros del lago Ypacaraí con amplio jardín y
+                piscina.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 220m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 4
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 3
+                  Baños</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  ><i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                  San Bernardino</span
+                >
+                <a href="#" class="text-secondary font-medium hover:underline"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Property 3 -->
+          <div
+            class="property-card property-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+            data-type="apartment"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/indoor/640x360/9"
+                alt="Departamento en Villa Morra"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                OFERTA
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Departamento en Villa Morra
+                </h3>
+                <span class="text-secondary font-bold">$275,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Moderno departamento en el corazón de Villa Morra con amenities
+                premium.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 120m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 2
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 2
+                  Baños</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  ><i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                  Villa Morra, Asunción</span
+                >
+                <a href="#" class="text-secondary font-medium hover:underline"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Property 4 -->
+          <div
+            class="property-card property-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+            data-type="land"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/outdoor/640x360/10"
+                alt="Terreno en Ciudad del Este"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                INVERSIÓN
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Terreno en Ciudad del Este
+                </h3>
+                <span class="text-secondary font-bold">$180,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Terreno comercial en zona de alto crecimiento con excelente
+                acceso.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i>
+                  1,200m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="map" class="mr-1 w-4 h-4"></i> Frente
+                  30m</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="compass" class="mr-1 w-4 h-4"></i>
+                  Norte</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  ><i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                  Ciudad del Este</span
+                >
+                <a href="#" class="text-secondary font-medium hover:underline"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Property 5 -->
+          <div
+            class="property-card property-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+            data-type="commercial"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/commercial/640x360/11"
+                alt="Local comercial en Asunción"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold"
+              >
+                ALQUILER
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Local Comercial en Centro
+                </h3>
+                <span class="text-secondary font-bold">$2,500/mes</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Local en planta baja con excelente visibilidad y tránsito
+                peatonal.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 85m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="battery" class="mr-1 w-4 h-4"></i> 3
+                  A/C</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="users" class="mr-1 w-4 h-4"></i> 2
+                  Baños</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  ><i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                  Centro, Asunción</span
+                >
+                <a href="#" class="text-secondary font-medium hover:underline"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Property 6 -->
+          <div
+            class="property-card property-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+            data-type="house"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/outdoor/640x360/12"
+                alt="Casa en Lambaré"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                VENTA
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Casa Familiar en Lambaré
+                </h3>
+                <span class="text-secondary font-bold">$290,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Amplia casa familiar con parque arbolado y amplios espacios
+                sociales.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 190m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 3
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 2
+                  Baños</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500"
+                  ><i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                  Lambaré</span
+                >
+                <a href="#" class="text-secondary font-medium hover:underline"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+          <nav class="inline-flex rounded-md shadow">
+            <a
+              href="#"
+              class="px-4 py-2 rounded-l-md border border-gray-300 bg-white text-primary font-medium hover:bg-gray-50"
+            >
+              <i data-feather="chevron-left" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#"
+              class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium hover:bg-gray-50"
+              >1</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium hover:bg-gray-50"
+              >2</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium hover:bg-gray-50"
+              >3</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium hover:bg-gray-50"
+              >4</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 rounded-r-md border border-gray-300 bg-white text-primary font-medium hover:bg-gray-50"
+            >
+              <i data-feather="chevron-right" class="w-5 h-5"></i>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-secondary text-white">
+      <div class="container mx-auto px-4 text-center max-w-2xl">
+        <h2 class="text-3xl font-bold mb-4">
+          Recibe las mejores oportunidades
+        </h2>
+        <p class="mb-8">
+          Suscríbete a nuestro newsletter y recibe en tu correo las propiedades
+          exclusivas antes que nadie.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+          <input
+            type="email"
+            placeholder="Tu correo electrónico"
+            class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-800"
+          />
+          <button
+            type="submit"
+            class="bg-primary hover:bg-accent text-white font-bold py-3 px-6 rounded-lg transition"
+          >
+            Suscribirme
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-12 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Investments Paraguay</h3>
+            <p class="mb-4 text-white text-opacity-80">
+              Líderes en inversiones inmobiliarias premium en Paraguay con más
+              de 10 años de experiencia.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="facebook" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="instagram" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="linkedin" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="youtube" class="w-5 h-5"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Enlaces Rápidos</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="propiedades.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Propiedades</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacto.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Zonas</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Asunción</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Central</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Alto Paraná</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >San Bernardino</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Contacto</h3>
+            <address class="not-italic text-white text-opacity-80">
+              <p class="flex items-center mb-2">
+                <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> Av. España
+                1234, Asunción
+              </p>
+              <p class="flex items-center mb-2">
+                <i data-feather="phone" class="mr-2 w-4 h-4"></i> +595 21 123
+                456
+              </p>
+              <p class="flex items-center">
+                <i data-feather="mail" class="mr-2 w-4 h-4"></i>
+                info@investmentsparaguay.com
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white border-opacity-20 pt-6 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-white text-opacity-70 mb-4 md:mb-0">
+            © 2023 Investments Paraguay. Todos los derechos reservados.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-white text-opacity-70 hover:text-accent transition text-sm"
+              >Política de Privacidad</a
+            >
+            <a
+              href="#"
+              class="text-white text-opacity-70 hover:text-accent transition text-sm"
+              >Términos de Servicio</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Language switcher
+      document
+        .querySelector(".language-switcher")
+        .addEventListener("click", function () {
+          alert("Cambiar idioma a inglés / Switch to English");
+        });
+
+      // Property filtering
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const propertyItems = document.querySelectorAll(".property-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterButtons.forEach((btn) => btn.classList.remove("active-filter"));
+          // Add active class to clicked button
+          button.classList.add("active-filter");
+
+          const filterValue = button.getAttribute("data-filter");
+
+          propertyItems.forEach((item) => {
+            if (
+              filterValue === "all" ||
+              item.getAttribute("data-type") === filterValue
+            ) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Initialize feather icons
+      feather.replace();
+    </script>
+  </body>
+</html>

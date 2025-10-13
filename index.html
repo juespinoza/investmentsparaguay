@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Inversiones premium en bienes raíces en Paraguay. Encuentre propiedades exclusivas en Asunción y todo el país."
+    />
+    <meta
+      name="keywords"
+      content="paraguay real estate, propiedades en asunción, inversiones paraguay, casas de lujo paraguay, apartamentos premium"
+    />
+    <meta name="geo.region" content="PY" />
+    <meta name="geo.placename" content="Asunción" />
+    <meta name="robots" content="index, follow" />
+    <title>Investments Paraguay | Bienes Raíces Premium</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a365d",
+              secondary: "#c05621",
+              accent: "#f6ad55",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 54, 93, 0.9) 0%,
+          rgba(22, 78, 99, 0.8) 100%
+        );
+      }
+      .property-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .language-switcher {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-2">
+          <i data-feather="home" class="text-secondary w-6 h-6"></i>
+          <span class="text-xl font-bold text-primary"
+            >InvestmentsParaguay</span
+          >
+        </a>
+
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Inicio</a
+          >
+          <a
+            href="propiedades.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Propiedades</a
+          >
+          <a
+            href="blog.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Blog</a
+          >
+          <a
+            href="contacto.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Contacto</a
+          >
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="language-switcher px-3 py-1 rounded-full bg-gray-100 text-primary text-sm font-medium hover:bg-secondary hover:text-white"
+          >
+            ES/EN
+          </button>
+          <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+            <i data-feather="menu" class="w-6 h-6 text-primary"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+          <a
+            href="index.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Inicio</a
+          >
+          <a
+            href="propiedades.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Propiedades</a
+          >
+          <a
+            href="blog.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Blog</a
+          >
+          <a
+            href="contacto.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+      <div class="container mx-auto px-4 py-24 md:py-32">
+        <div class="max-w-2xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Inversiones Inmobiliarias en Paraguay
+          </h1>
+          <p class="text-xl md:text-2xl mb-8">
+            Descubra propiedades exclusivas en los mejores barrios de Asunción y
+            todo Paraguay.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="propiedades.html"
+              class="bg-secondary hover:bg-accent text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105"
+            >
+              Ver Propiedades
+            </a>
+            <a
+              href="contacto.html"
+              class="bg-transparent hover:bg-white hover:text-primary border-2 border-white text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105"
+            >
+              Contactar Asesor
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">
+          Propiedades Destacadas
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Property 1 -->
+          <div
+            class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/cityscape/640x360/1"
+                alt="Penthouse en Asunción"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                NUEVO
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Penthouse en Carmelitas
+                </h3>
+                <span class="text-secondary font-bold">$450,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Exclusivo penthouse con vista panorámica a la ciudad de
+                Asunción.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 180m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 3
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 2
+                  Baños</span
+                >
+              </div>
+              <a
+                href="#"
+                class="block text-center bg-primary hover:bg-secondary text-white py-2 px-4 rounded-lg transition"
+                >Ver Detalles</a
+              >
+            </div>
+          </div>
+
+          <!-- Property 2 -->
+          <div
+            class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/outdoor/640x360/2"
+                alt="Casa en San Bernardino"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold"
+              >
+                DESTACADO
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Casa en San Bernardino
+                </h3>
+                <span class="text-secondary font-bold">$320,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Hermosa casa a metros del lago Ypacaraí con amplio jardín y
+                piscina.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 220m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 4
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 3
+                  Baños</span
+                >
+              </div>
+              <a
+                href="#"
+                class="block text-center bg-primary hover:bg-secondary text-white py-2 px-4 rounded-lg transition"
+                >Ver Detalles</a
+              >
+            </div>
+          </div>
+
+          <!-- Property 3 -->
+          <div
+            class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300"
+          >
+            <div class="relative">
+              <img
+                src="http://static.photos/indoor/640x360/3"
+                alt="Departamento en Villa Morra"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                OFERTA
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-primary">
+                  Departamento en Villa Morra
+                </h3>
+                <span class="text-secondary font-bold">$275,000</span>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Moderno departamento en el corazón de Villa Morra con amenities
+                premium.
+              </p>
+              <div class="flex items-center text-gray-500 space-x-4 mb-4">
+                <span class="flex items-center"
+                  ><i data-feather="home" class="mr-1 w-4 h-4"></i> 120m²</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="square" class="mr-1 w-4 h-4"></i> 2
+                  Dorm.</span
+                >
+                <span class="flex items-center"
+                  ><i data-feather="droplet" class="mr-1 w-4 h-4"></i> 2
+                  Baños</span
+                >
+              </div>
+              <a
+                href="#"
+                class="block text-center bg-primary hover:bg-secondary text-white py-2 px-4 rounded-lg transition"
+                >Ver Detalles</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a
+            href="propiedades.html"
+            class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition"
+          >
+            Ver Todas las Propiedades
+            <i data-feather="arrow-right" class="inline ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">
+          ¿Por Qué Elegirnos?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"
+            >
+              <i data-feather="award" class="text-primary w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              10+ Años de Experiencia
+            </h3>
+            <p class="text-gray-600">
+              Líderes en el mercado inmobiliario paraguayo con una trayectoria
+              comprobada.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"
+            >
+              <i data-feather="map-pin" class="text-primary w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Ubicaciones Premium
+            </h3>
+            <p class="text-gray-600">
+              Propiedades en las zonas más exclusivas y con mayor potencial de
+              valorización.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"
+            >
+              <i data-feather="shield" class="text-primary w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Asesoría Legal Completa
+            </h3>
+            <p class="text-gray-600">
+              Te acompañamos en todo el proceso con nuestro equipo jurídico
+              especializado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Testimonios de Clientes
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="http://static.photos/people/120x120/1"
+                alt="Juan Pérez"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Juan Pérez</h4>
+                <p class="text-accent text-sm">Inversor desde 2018</p>
+              </div>
+            </div>
+            <p class="italic">
+              "Gracias a Investments Paraguay encontré la propiedad perfecta
+              para mi familia. Su atención personalizada hizo toda la
+              diferencia."
+            </p>
+            <div class="flex mt-4 text-accent">
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+            </div>
+          </div>
+
+          <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="http://static.photos/people/120x120/2"
+                alt="María González"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">María González</h4>
+                <p class="text-accent text-sm">Inversora desde 2020</p>
+              </div>
+            </div>
+            <p class="italic">
+              "Excelente servicio! Compré mi primer departamento con ellos y el
+              proceso fue transparente y sin complicaciones. 100% recomendados."
+            </p>
+            <div class="flex mt-4 text-accent">
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+            </div>
+          </div>
+
+          <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="http://static.photos/people/120x120/3"
+                alt="Carlos Rojas"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Carlos Rojas</h4>
+                <p class="text-accent text-sm">Inversor desde 2019</p>
+              </div>
+            </div>
+            <p class="italic">
+              "Como inversor extranjero, valoré mucho su conocimiento del
+              mercado paraguayo. Me ayudaron a encontrar una propiedad con gran
+              potencial."
+            </p>
+            <div class="flex mt-4 text-accent">
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+              <i data-feather="star" class="w-4 h-4 fill-current"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="bg-primary rounded-xl p-8 md:p-12 shadow-xl">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+              <h2 class="text-3xl font-bold text-white mb-4">
+                ¿Listo para invertir en Paraguay?
+              </h2>
+              <p class="text-white text-opacity-80 mb-6">
+                Nuestros expertos están listos para ayudarte a encontrar la
+                propiedad perfecta según tus necesidades y presupuesto.
+              </p>
+              <div class="flex items-center text-white">
+                <i data-feather="phone" class="mr-2"></i>
+                <span class="font-medium">+595 21 123 456</span>
+              </div>
+              <div class="flex items-center text-white mt-2">
+                <i data-feather="mail" class="mr-2"></i>
+                <span class="font-medium">info@investmentsparaguay.com</span>
+              </div>
+            </div>
+            <div class="md:w-1/2 bg-white rounded-lg p-6 shadow-md">
+              <h3 class="text-xl font-bold text-primary mb-4">Contáctanos</h3>
+              <form>
+                <div class="mb-4">
+                  <input
+                    type="text"
+                    placeholder="Nombre completo"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="email"
+                    placeholder="Correo electrónico"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+                <div class="mb-4">
+                  <input
+                    type="tel"
+                    placeholder="Teléfono"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+                <div class="mb-4">
+                  <textarea
+                    placeholder="Mensaje"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-secondary hover:bg-accent text-white font-bold py-3 px-6 rounded-lg transition"
+                >
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl font-bold text-primary">Últimas Noticias</h2>
+          <a
+            href="blog.html"
+            class="text-secondary font-medium hover:underline flex items-center"
+          >
+            Ver todas <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Article 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/cityscape/640x360/4"
+              alt="Mercado inmobiliario Paraguay"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-sm text-secondary font-medium"
+                >Mercado Inmobiliario</span
+              >
+              <h3 class="text-xl font-bold text-primary my-2">
+                Tendencias 2023 en el mercado paraguayo
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Análisis de las zonas con mayor crecimiento y potencial de
+                inversión en Asunción.
+              </p>
+              <a
+                href="#"
+                class="text-secondary font-medium hover:underline flex items-center"
+              >
+                Leer más <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/finance/640x360/5"
+              alt="Inversión extranjera Paraguay"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-sm text-secondary font-medium"
+                >Inversión Extranjera</span
+              >
+              <h3 class="text-xl font-bold text-primary my-2">
+                Guía para inversores internacionales
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Todo lo que necesitas saber para invertir en bienes raíces en
+                Paraguay como extranjero.
+              </p>
+              <a
+                href="#"
+                class="text-secondary font-medium hover:underline flex items-center"
+              >
+                Leer más <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img
+              src="http://static.photos/construction/640x360/6"
+              alt="Barrios en crecimiento Asunción"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-sm text-secondary font-medium"
+                >Desarrollo Urbano</span
+              >
+              <h3 class="text-xl font-bold text-primary my-2">
+                Los barrios con mayor proyección en Asunción
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Descubre las zonas que están atrayendo más inversiones y por
+                qué.
+              </p>
+              <a
+                href="#"
+                class="text-secondary font-medium hover:underline flex items-center"
+              >
+                Leer más <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-12 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Investments Paraguay</h3>
+            <p class="mb-4 text-white text-opacity-80">
+              Líderes en inversiones inmobiliarias premium en Paraguay con más
+              de 10 años de experiencia.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="facebook" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="instagram" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="linkedin" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="youtube" class="w-5 h-5"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Enlaces Rápidos</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="propiedades.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Propiedades</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacto.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Zonas</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Asunción</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Central</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Alto Paraná</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >San Bernardino</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Contacto</h3>
+            <address class="not-italic text-white text-opacity-80">
+              <p class="flex items-center mb-2">
+                <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> Av. España
+                1234, Asunción
+              </p>
+              <p class="flex items-center mb-2">
+                <i data-feather="phone" class="mr-2 w-4 h-4"></i> +595 21 123
+                456
+              </p>
+              <p class="flex items-center">
+                <i data-feather="mail" class="mr-2 w-4 h-4"></i>
+                info@investmentsparaguay.com
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white border-opacity-20 pt-6 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-white text-opacity-70 mb-4 md:mb-0">
+            © 2023 Investments Paraguay. Todos los derechos reservados.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-white text-opacity-70 hover:text-accent transition text-sm"
+              >Política de Privacidad</a
+            >
+            <a
+              href="#"
+              class="text-white text-opacity-70 hover:text-accent transition text-sm"
+              >Términos de Servicio</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Language switcher (simplified example)
+      document
+        .querySelector(".language-switcher")
+        .addEventListener("click", function () {
+          // In a real implementation, this would change the site's language
+          alert("Cambiar idioma a inglés / Switch to English");
+        });
+
+      // Initialize feather icons
+      feather.replace();
+    </script>
+  </body>
+</html>

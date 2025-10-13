@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contacta a nuestros expertos en bienes raíces en Paraguay. Estamos aquí para ayudarte a encontrar la propiedad perfecta."
+    />
+    <meta
+      name="keywords"
+      content="contacto inversiones paraguay, asesor inmobiliario paraguay, consulta propiedades paraguay"
+    />
+    <title>Contacto | Investments Paraguay</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a365d",
+              secondary: "#c05621",
+              accent: "#f6ad55",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      .contact-info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-2">
+          <i data-feather="home" class="text-secondary w-6 h-6"></i>
+          <span class="text-xl font-bold text-primary"
+            >InvestmentsParaguay</span
+          >
+        </a>
+
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Inicio</a
+          >
+          <a
+            href="propiedades.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Propiedades</a
+          >
+          <a
+            href="blog.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Blog</a
+          >
+          <a
+            href="contacto.html"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Contacto</a
+          >
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="language-switcher px-3 py-1 rounded-full bg-gray-100 text-primary text-sm font-medium hover:bg-secondary hover:text-white"
+          >
+            ES/EN
+          </button>
+          <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+            <i data-feather="menu" class="w-6 h-6 text-primary"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+          <a
+            href="index.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Inicio</a
+          >
+          <a
+            href="propiedades.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Propiedades</a
+          >
+          <a
+            href="blog.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Blog</a
+          >
+          <a
+            href="contacto.html"
+            class="py-2 text-primary font-medium hover:text-secondary transition"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="bg-primary text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">Contáctanos</h1>
+        <p class="text-xl text-white text-opacity-90 max-w-2xl mx-auto">
+          Nuestros expertos están listos para ayudarte a encontrar la propiedad
+          perfecta
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <!-- Contact Info 1 -->
+          <div
+            class="contact-info-card bg-gray-50 p-8 rounded-lg shadow-md transition duration-300"
+          >
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            >
+              <i data-feather="phone" class="text-primary w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Teléfono</h3>
+            <p class="text-gray-600 mb-2">+595 21 123 456</p>
+            <p class="text-gray-600">+595 981 123 456</p>
+          </div>
+
+          <!-- Contact Info 2 -->
+          <div
+            class="contact-info-card bg-gray-50 p-8 rounded-lg shadow-md transition duration-300"
+          >
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            >
+              <i data-feather="mail" class="text-primary w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">
+              Correo Electrónico
+            </h3>
+            <p class="text-gray-600 mb-2">info@investmentsparaguay.com</p>
+            <p class="text-gray-600">ventas@investmentsparaguay.com</p>
+          </div>
+
+          <!-- Contact Info 3 -->
+          <div
+            class="contact-info-card bg-gray-50 p-8 rounded-lg shadow-md transition duration-300"
+          >
+            <div
+              class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            >
+              <i data-feather="map-pin" class="text-primary w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Oficina Central</h3>
+            <p class="text-gray-600">Av. España 1234, Asunción</p>
+            <p class="text-gray-600">Horario: Lunes a Viernes 8:00 - 18:00</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-6">
+              Envíanos un mensaje
+            </h2>
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 font-medium mb-2"
+                    >Nombre completo</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-medium mb-2"
+                    >Correo electrónico</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="phone" class="block text-gray-700 font-medium mb-2"
+                  >Teléfono</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Asunto</label
+                >
+                <select
+                  id="subject"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                >
+                  <option>Consulta sobre propiedad</option>
+                  <option>Quiero vender mi propiedad</option>
+                  <option>Asesoría de inversión</option>
+                  <option>Otra consulta</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-secondary hover:bg-accent text-white font-bold py-4 px-6 rounded-lg transition transform hover:scale-105"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+
+          <!-- Map -->
+          <div>
+            <h2 class="text-3xl font-bold text-primary mb-6">Visítanos</h2>
+            <div id="map" class="rounded-lg shadow-md"></div>
+            <div class="mt-6 bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold text-primary mb-3">
+                Oficinas en Paraguay
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i
+                    data-feather="map-pin"
+                    class="text-secondary mr-3 mt-1 w-5 h-5"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold">Asunción</h4>
+                    <p class="text-gray-600">
+                      Av. España 1234, Edificio Sky, Piso 5
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                      Lunes a Viernes: 8:00 - 18:00
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-feather="map-pin"
+                    class="text-secondary mr-3 mt-1 w-5 h-5"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold">Ciudad del Este</h4>
+                    <p class="text-gray-600">
+                      Av. San Blas 567, Centro Comercial del Este
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                      Lunes a Viernes: 9:00 - 17:00
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-feather="map-pin"
+                    class="text-secondary mr-3 mt-1 w-5 h-5"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold">Encarnación</h4>
+                    <p class="text-gray-600">
+                      Av. Rodríguez de Francia 891, Local 3
+                    </p>
+                    <p class="text-gray-500 text-sm">
+                      Lunes a Viernes: 9:00 - 17:00
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Our Agents -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">
+          Conoce a Nuestros Agentes
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Agent 1 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md text-center"
+          >
+            <img
+              src="http://static.photos/people/640x360/21"
+              alt="Carlos Benítez"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-1">
+                Carlos Benítez
+              </h3>
+              <p class="text-secondary font-medium mb-4">Director de Ventas</p>
+              <p class="text-gray-600 mb-4">
+                Especialista en propiedades de lujo con más de 15 años de
+                experiencia en el mercado paraguayo.
+              </p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="phone" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="mail" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="message-square" class="w-5 h-5"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agent 2 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md text-center"
+          >
+            <img
+              src="http://static.photos/people/640x360/22"
+              alt="María Fernández"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-1">
+                María Fernández
+              </h3>
+              <p class="text-secondary font-medium mb-4">
+                Asesora Inmobiliaria
+              </p>
+              <p class="text-gray-600 mb-4">
+                Experta en inversiones para clientes internacionales y
+                asesoramiento legal.
+              </p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="phone" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="mail" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="message-square" class="w-5 h-5"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agent 3 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md text-center"
+          >
+            <img
+              src="http://static.photos/people/640x360/23"
+              alt="Juan Rodríguez"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-1">
+                Juan Rodríguez
+              </h3>
+              <p class="text-secondary font-medium mb-4">
+                Especialista en Terrenos
+              </p>
+              <p class="text-gray-600 mb-4">
+                Conoce todas las zonas con potencial de crecimiento y
+                valorización en Paraguay.
+              </p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="phone" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="mail" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="message-square" class="w-5 h-5"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agent 4 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md text-center"
+          >
+            <img
+              src="http://static.photos/people/640x360/24"
+              alt="Laura Martínez"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-primary mb-1">
+                Laura Martínez
+              </h3>
+              <p class="text-secondary font-medium mb-4">Asesora Comercial</p>
+              <p class="text-gray-600 mb-4">
+                Especializada en propiedades comerciales y locales en zonas
+                estratégicas.
+              </p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="phone" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="mail" class="w-5 h-5"></i
+                ></a>
+                <a href="#" class="text-primary hover:text-secondary transition"
+                  ><i data-feather="message-square" class="w-5 h-5"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">
+          Preguntas Frecuentes
+        </h2>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full flex justify-between items-center p-6 focus:outline-none"
+            >
+              <h3 class="text-lg font-bold text-primary text-left">
+                ¿Cómo puedo agendar una visita a una propiedad?
+              </h3>
+              <i
+                data-feather="chevron-down"
+                class="text-secondary w-6 h-6 transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                Puedes contactarnos por teléfono al +595 21 123 456 o completar
+                el formulario de contacto indicando la propiedad de tu interés.
+                Uno de nuestros agentes se comunicará contigo para coordinar la
+                visita en el horario que más te convenga, ya sea en nuestras
+                oficinas o en la ubicación de la propiedad.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full flex justify-between items-center p-6 focus:outline-none"
+            >
+              <h3 class="text-lg font-bold text-primary text-left">
+                ¿Qué documentos necesito para comprar una propiedad en Paraguay?
+              </h3>
+              <i
+                data-feather="chevron-down"
+                class="text-secondary w-6 h-6 transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                Los documentos básicos son: cédula de identidad (o pasaporte
+                para extranjeros), registro de antecedentes penales, y en
+                algunos casos, constancia de ingresos. Para extranjeros se
+                requieren documentos adicionales que varían según el país de
+                origen. Nuestro equipo legal te asesorará sobre todos los
+                requisitos específicos para tu caso.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full flex justify-between items-center p-6 focus:outline-none"
+            >
+              <h3 class="text-lg font-bold text-primary text-left">
+                ¿Qué zonas de Paraguay ofrecen mejor rentabilidad para
+                inversión?
+              </h3>
+              <i
+                data-feather="chevron-down"
+                class="text-secondary w-6 h-6 transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                Actualmente, las zonas con mayor potencial de crecimiento son:
+                barrios como Carmelitas y Villa Morra en Asunción, la zona de Ñu
+                Guazú en el departamento Central, y áreas cercanas a los nuevos
+                proyectos de infraestructura en Ciudad del Este. El rendimiento
+                varía según el tipo de propiedad y plazo de inversión.
+                Recomendamos agendar una consulta con nuestros especialistas
+                para analizar tu perfil de inversor.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full flex justify-between items-center p-6 focus:outline-none"
+            >
+              <h3 class="text-lg font-bold text-primary text-left">
+                ¿Ofrecen financiamiento para la compra de propiedades?
+              </h3>
+              <i
+                data-feather="chevron-down"
+                class="text-secondary w-6 h-6 transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                Trabajamos con los principales bancos e instituciones
+                financieras del país y podemos ayudarte a gestionar tu solicitud
+                de crédito hipotecario. Los requisitos y tasas varían según la
+                entidad financiera y tu perfil crediticio. También ofrecemos
+                opciones de pago directo con algunas propiedades, con planes que
+                pueden incluir cuotas iniciales y saldos a plazos sin necesidad
+                de intermediación bancaria.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="faq-question w-full flex justify-between items-center p-6 focus:outline-none"
+            >
+              <h3 class="text-lg font-bold text-primary text-left">
+                ¿Cómo es el proceso de compra de una propiedad en Paraguay?
+              </h3>
+              <i
+                data-feather="chevron-down"
+                class="text-secondary w-6 h-6 transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 hidden">
+              <p class="text-gray-600">
+                El proceso típico incluye: 1) Selección de la propiedad, 2)
+                Reserva mediante contrato de opción de compra, 3) Verificación
+                legal del título de propiedad, 4) Firma de escritura ante
+                escribano público, 5) Registro de la transferencia en la
+                Dirección General de los Registros Públicos. Nuestro equipo te
+                acompañará en cada paso, garantizando que todos los requisitos
+                legales se cumplan correctamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-12 pb-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Investments Paraguay</h3>
+            <p class="mb-4 text-white text-opacity-80">
+              Líderes en inversiones inmobiliarias premium en Paraguay con más
+              de 10 años de experiencia.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="facebook" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="instagram" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="linkedin" class="w-5 h-5"></i
+              ></a>
+              <a href="#" class="text-white hover:text-accent transition"
+                ><i data-feather="youtube" class="w-5 h-5"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Enlaces Rápidos</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="propiedades.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Propiedades</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacto.html"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Zonas</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Asunción</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Central</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >Alto Paraná</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-opacity-80 hover:text-accent transition"
+                  >San Bernardino</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Contacto</h3>
+            <address class="not-italic text-white text-opacity-80">
+              <p class="flex items-center mb-2">
+                <i data-feather="map-pin" class="mr-2 w-4 h-4"></i> Av. España
+                1234, Asunción
+              </p>
+              <p class="flex items-center mb-2">
+                <i data-feather="phone" class="mr-2 w-4 h-4"></i> +595 21 123
+                456
+              </p>
+              <p class="flex items-center">
+                <i data-feather="mail" class="mr-2 w-4 h-4"></i>
+                info@investmentsparaguay.com
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white border-opacity-20 pt-6 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-white text-opacity-70 mb-4 md:mb-0">
+            © 2023 Investments Paraguay. Todos los derechos reservados.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-white text-opacity-70 hover:text-accent transition text-sm"
+              >Política de Privacidad</a
+            >
+            <a
+              href="#"
+              class="text-white text-opacity-70 hover:text-accent transition text-sm"
+              >Términos de Servicio</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Language switcher
+      document
+        .querySelector(".language-switcher")
+        .addEventListener("click", function () {
+          alert("Cambiar idioma a inglés / Switch to English");
+        });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector("i");
+
+          // Toggle answer visibility
+          answer.classList.toggle("hidden");
+
+          // Rotate icon
+          icon.classList.toggle("rotate-180");
+
+          // Close other answers
+          faqQuestions.forEach((q) => {
+            if (q !== question) {
+              q.nextElementSibling.classList.add("hidden");
+              q.querySelector("i").classList.remove("rotate-180");
+            }
+          });
+        });
+      });
+
+      // Google Maps Integration (placeholder - would need actual API key)
+      function initMap() {
+        // This is a placeholder. In a real implementation, you would:
+        // 1. Include the Google Maps API script with your API key
+        // 2. Initialize the map with your office location
+        console.log("Map would be initialized here with API key");
+      }
+
+      // Initialize map when page loads
+      window.onload = initMap;
+
+      // Initialize feather icons
+      feather.replace();
+    </script>
+  </body>
+</html>
